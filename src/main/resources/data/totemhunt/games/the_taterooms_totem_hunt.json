@@ -1,0 +1,11 @@
+{
+	"type": "totemhunt:totemhunt",
+	"icon": "minecraft:endstone",
+	"map": "totemhunt:the_taterooms",
+	"totems": 1,
+	"players": {
+		"min": 1,
+		"max": 32,
+		"threshold": 4
+	}
+}
