@@ -5,6 +5,8 @@ import java.util.List;
 
 import io.github.haykam821.totemhunt.game.PlayerEntry;
 import io.github.haykam821.totemhunt.game.phase.TotemHuntActivePhase;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -82,10 +84,10 @@ public abstract class Role {
 			slot += 1;
 		}
 
-		slot = 3;
+		slot = EquipmentSlot.HEAD.getOffsetEntitySlotId(PlayerInventory.MAIN_SIZE);
 		List<ItemStack> armor = this.getArmor(player.getRegistryManager());
 		for (ItemStack stack : armor) {
-			player.getInventory().armor.set(slot, stack);
+			player.getInventory().setStack(slot, stack);
 			slot -= 1;
 		}
 

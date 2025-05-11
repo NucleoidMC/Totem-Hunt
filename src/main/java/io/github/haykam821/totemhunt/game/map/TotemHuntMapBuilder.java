@@ -51,7 +51,7 @@ public class TotemHuntMapBuilder {
 			if (regionB.getData() == null) return -1;
 			if (regionA.getData() == null) return 1;
 
-			return regionB.getData().getInt("Priority") - regionA.getData().getInt("Priority");
+			return regionB.getData().getInt("Priority", 0) - regionA.getData().getInt("Priority", 0);
 		}).map(TemplateRegion::getBounds).collect(Collectors.toList());
 
 		if (spawns.isEmpty()) {
